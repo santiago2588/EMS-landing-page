@@ -45,7 +45,7 @@ const SavingsCalculatorPage = () => {
     if (monthlyBill <= 0) {
       toast({
         title: "Error de cálculo",
-        description: "Por favor, introduce un coste mensual válido.",
+        description: "Por favor, introduce un costo mensual válido.",
         variant: "destructive",
       });
       return;
@@ -106,7 +106,7 @@ const SavingsCalculatorPage = () => {
             <div>
               <Label htmlFor="monthlyBill" className="text-lg font-medium flex items-center mb-2">
                 <DollarSign size={20} className="mr-2 text-primary" />
-                Coste Energético Mensual ($)
+                Costo Energético Mensual ($)
               </Label>
               <Input
                 type="number"

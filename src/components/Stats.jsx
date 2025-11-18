@@ -40,7 +40,7 @@ const Stats = () => {
               Resultados <span className="gradient-text">Comprobados</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Nuestros clientes han experimentado mejoras significativas en su eficiencia energética y reducción de costos.
+              Nuestros clientes han experimentado mejoras significativas en su eficiencia energética y reducción de costo.
             </p>
           </div>
 
