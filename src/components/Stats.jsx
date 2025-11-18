@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Clock, DollarSign, Leaf } from 'lucide-react';
+import { TrendingUp, Clock, Currency, Leaf } from 'lucide-react';
 
 const stats = [
   {
@@ -17,10 +17,10 @@ const stats = [
     description: "Retorno de inversión promedio"
   },
   {
-    icon: <DollarSign className="h-8 w-8 text-blue-600" />,
+    icon: <Currency className="h-8 w-8 text-blue-600" />,
     value: "45%",
-    label: "Ahorro en costos",
-    description: "Reducción en factura energética"
+    label: "Ahorro en dolares",
+    description: "Reducción en factura energetica en dolares"
   },
   {
     icon: <Leaf className="h-8 w-8 text-blue-600" />,

@@ -63,7 +63,7 @@ const SavingsCalculatorPage = () => {
     
     toast({
         title: "Cálculo completado",
-        description: `Ahorro estimado: €${monthlySaving.toFixed(2)} mensuales.`,
+        description: `Ahorro estimado: $${monthlySaving.toFixed(2)} mensuales.`,
     });
   };
 
@@ -106,7 +106,7 @@ const SavingsCalculatorPage = () => {
             <div>
               <Label htmlFor="monthlyBill" className="text-lg font-medium flex items-center mb-2">
                 <DollarSign size={20} className="mr-2 text-primary" />
-                Coste Energético Mensual (€)
+                Coste Energético Mensual ($)
               </Label>
               <Input
                 type="number"
@@ -181,13 +181,13 @@ const SavingsCalculatorPage = () => {
                 <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg text-center">
                   <p className="text-sm text-blue-700 dark:text-blue-300 mb-1">Ahorro Mensual Estimado</p>
                   <p className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
-                    €{calculatedSavings.monthly.toLocaleString('es-ES')}
+                    ${calculatedSavings.monthly.toLocaleString('en-US')}
                   </p>
                 </div>
                 <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg text-center">
                   <p className="text-sm text-green-700 dark:text-green-300 mb-1">Ahorro Anual Estimado</p>
                   <p className="text-4xl font-extrabold text-green-600 dark:text-green-400">
-                    €{calculatedSavings.annual.toLocaleString('es-ES')}
+                    ${calculatedSavings.annual.toLocaleString('en-US')}
                   </p>
                 </div>
               </div>
