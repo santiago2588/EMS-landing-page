@@ -2,12 +2,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const plans = [
   {
     name: "Small",
-    price: "50",
+    annualPrice: "500",
+    implementationFee: "150",
     description: "Hasta 10 assets/medidores",
     features: [
       "Monitoreo en tiempo real",
@@ -18,7 +19,8 @@ const plans = [
   },
   {
     name: "Medium",
-    price: "100",
+    annualPrice: "1,000",
+    implementationFee: "400",
     description: "Hasta 50 assets/medidores",
     features: [
       "Todo lo del plan Small",
@@ -30,7 +32,8 @@ const plans = [
   },
   {
     name: "Large",
-    price: "~500",
+    annualPrice: "5,000",
+    implementationFee: "1,000",
     description: "Hasta varios cientos de assets/medidores",
     features: [
       "Todo lo del plan Medium",
@@ -61,11 +64,11 @@ const CTA = () => {
             Estructura de <span className="gradient-text">Precios y Monetización</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Modelos basados en la cantidad de assets/medidores, pensados para escalar con tu operación.
+            Modelo transparente: Tarifa de implementación única + Suscripción anual escalable.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -73,34 +76,38 @@ const CTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative rounded-xl border bg-card p-6 shadow-sm ${
-                plan.popular ? 'border-brand-g7 shadow-[0_0_0_3px_rgba(0,114,151,0.08)] dark:shadow-none' : ''
-              }`}
+              className={`relative rounded-xl border bg-card p-6 shadow-sm ${plan.popular ? 'border-brand-g7 shadow-[0_0_0_3px_rgba(0,114,151,0.08)] dark:shadow-none' : ''
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-0 right-0 mx-auto w-fit rounded-full bg-brand-g7 px-3 py-1 text-xs font-medium text-white">
                   Más Popular
                 </div>
               )}
-              
+
               <div className="mb-5">
                 <h3 className="text-xl font-bold">{plan.name}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{plan.description}</p>
               </div>
-              
+
               <div className="mb-5">
-                <div className="flex items-baseline">
-                  {plan.price !== "Personalizado" ? (
-                    <>
-                      <span className="text-3xl font-bold">${plan.price}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-1">/mes</span>
-                    </>
-                  ) : (
+                {plan.price === "Personalizado" ? (
+                  <div className="flex items-baseline">
                     <span className="text-3xl font-bold">{plan.price}</span>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold">${plan.annualPrice}</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-1">/año</span>
+                    </div>
+                    <div className="mt-2 text-sm text-gray-500 font-medium">
+                      + ${plan.implementationFee} Implementación única
+                    </div>
+                  </>
+                )}
               </div>
-              
+
               <ul className="mb-6 space-y-2">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center">
@@ -109,9 +116,9 @@ const CTA = () => {
                   </li>
                 ))}
               </ul>
-              
-              <Button 
-                variant={plan.popular ? "default" : "outline"} 
+
+              <Button
+                variant={plan.popular ? "default" : "outline"}
                 className="w-full"
               >
                 {plan.price === "Personalizado" ? "Contactar" : "Comenzar"}
@@ -120,44 +127,102 @@ const CTA = () => {
           ))}
         </div>
 
-        {/* Detalle de estructura y notas de precios */}
+        {/* Complementary Section: What's Included */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white dark:bg-gray-900/60 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm"
+          >
+            <div className="h-12 w-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-g7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4">¿Qué cubre la Implementación?</h3>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-brand-g7 mt-1 shrink-0" />
+                <span>Configuración inicial de la plataforma y carga de assets.</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-brand-g7 mt-1 shrink-0" />
+                <span>Migración de datos históricos (si aplica).</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-brand-g7 mt-1 shrink-0" />
+                <span>Capacitación personalizada para tu equipo operativo.</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-brand-g7 mt-1 shrink-0" />
+                <span>Configuración de alertas y reportes a medida.</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white dark:bg-gray-900/60 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm"
+          >
+            <div className="h-12 w-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-4">Beneficios de la Suscripción</h3>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-green-500 mt-1 shrink-0" />
+                <span>Acceso continuo a la plataforma y actualizaciones.</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-green-500 mt-1 shrink-0" />
+                <span>Almacenamiento seguro de datos en la nube.</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-green-500 mt-1 shrink-0" />
+                <span>Soporte técnico prioritario y mantenimiento.</span>
+              </li>
+              <li className="flex items-start">
+                <Check size={18} className="mr-2 text-green-500 mt-1 shrink-0" />
+                <span>Monitoreo de seguridad y backups automáticos.</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Final CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl bg-white/60 dark:bg-gray-800/50 border p-8 md:p-12 text-gray-900 dark:text-gray-100"
+          className="relative rounded-2xl bg-brand-g7 px-6 py-12 md:px-12 text-center overflow-hidden"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center">Detalles del modelo</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div>
-              <h4 className="font-semibold mb-2">Modelo propuesto por assets/medidores</h4>
-              <ul className="list-disc pl-5 space-y-1 text-sm md:text-base">
-                <li>Small: hasta 10 assets</li>
-                <li>Medium: hasta 50 assets</li>
-                <li>Large: hasta varios cientos assets</li>
-                <li>Enterprise: ilimitado</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2">Rangos de precios estimados</h4>
-              <ul className="list-disc pl-5 space-y-1 text-sm md:text-base">
-                <li>Pequeñas: $50/mes</li>
-                <li>Medianas: $100/mes</li>
-                <li>Grandes: ~$500/mes</li>
-              </ul>
-            </div>
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+            </svg>
           </div>
-          <div className="max-w-3xl mx-auto mt-6 text-sm md:text-base">
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Tarifa de implementación única + cuota anual recurrente</li>
-              <li>Costos adicionales por assets extra si exceden límites del plan</li>
-            </ul>
-          </div>
-          <div className="text-center mt-8">
-            <Button size="lg" className="group">
-              Solicitar una demostración personalizada
-              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              ¿Listo para optimizar tu consumo energético?
+            </h3>
+            <p className="text-blue-100 mb-8 text-lg">
+              Agenda una demostración hoy mismo y descubre cómo EnergyPro puede reducir tus costos operativos desde el primer mes.
+            </p>
+            <Button
+              size="lg"
+              className="bg-white text-brand-g7 hover:bg-blue-50 font-semibold px-8"
+            >
+              Solicitar Demo
             </Button>
           </div>
         </motion.div>
