@@ -17,10 +17,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        sans: ["Gotham Light", "Montserrat", "Poppins", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        title: ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
         brand: ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
-        // Use Montserrat Light as the closest widely-available alternative to Gotham Light.
-        // Poppins Light as secondary. If licensed Gotham is provided later, place its files and keep the stack.
-        slogan: ["Montserrat", "Poppins", "Gotham Light", "Gotham", "ui-sans-serif", "system-ui", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        slogan: ["Gotham Light", "Montserrat", "Poppins", "ui-sans-serif", "system-ui", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -98,11 +98,10 @@ module.exports = {
                 color: theme('colors.blue.700'),
               },
             },
-            h1: { color: theme('colors.gray.900')},
-            h2: { color: theme('colors.gray.900')},
-            h3: { color: theme('colors.gray.900')},
-            strong: { color: theme('colors.gray.900')},
-            // ...
+            h1: { color: theme('colors.gray.900') },
+            h2: { color: theme('colors.gray.900') },
+            h3: { color: theme('colors.gray.900') },
+            strong: { color: theme('colors.gray.900') },
           },
         },
         invert: {
@@ -114,11 +113,10 @@ module.exports = {
                 color: theme('colors.blue.300'),
               },
             },
-            h1: { color: theme('colors.gray.100')},
-            h2: { color: theme('colors.gray.100')},
-            h3: { color: theme('colors.gray.100')},
-            strong: { color: theme('colors.gray.100')},
-            // ...
+            h1: { color: theme('colors.gray.100') },
+            h2: { color: theme('colors.gray.100') },
+            h3: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.gray.100') },
           },
         },
       }),
