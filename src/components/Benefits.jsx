@@ -30,7 +30,7 @@ const Benefits = () => {
             <div className="relative mx-auto max-w-[550px]">
               <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 opacity-30 blur-xl"></div>
               <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg dark:border-gray-800 dark:bg-gray-900">
-                <img  alt="Análisis energético en planta manufacturera" className="w-full h-auto" src="https://images.unsplash.com/photo-1697869153348-d20999a62fcb" />
+                <img alt="Análisis energético en planta manufacturera" className="w-full h-auto" src="/images/manufacturing-plant-analysis.png" />
               </div>
             </div>
           </motion.div>
@@ -45,14 +45,14 @@ const Benefits = () => {
             <h2 className="text-3xl font-bold mb-6">
               Beneficios <span className="gradient-text">Tangibles</span> para tu Industria
             </h2>
-            
+
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Implementar EnergyPro en tu planta manufacturera no solo reduce costos, sino que transforma tu operación hacia un modelo más eficiente y sostenible.
             </p>
-            
+
             <ul className="space-y-3 mb-8">
               {benefitsList.map((benefit, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ const Benefits = () => {
                 </motion.li>
               ))}
             </ul>
-            
+
             <Button className="group">
               Descubrir más beneficios
               <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />

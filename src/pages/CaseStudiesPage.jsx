@@ -79,7 +79,7 @@ const CaseStudiesPage = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -87,7 +87,7 @@ const CaseStudiesPage = () => {
           >
             Casos de <span className="gradient-text">Éxito</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -109,7 +109,7 @@ const CaseStudiesPage = () => {
             >
               <div className={`relative order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                 <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                   <img  class="w-full h-full object-cover" alt={`Planta de ${study.industry}`} src="https://images.unsplash.com/photo-1697256200022-f61abccad430" />
+                  <img class="w-full h-full object-cover" alt={`Planta de ${study.industry}`} src={`/images/${study.imageSlug}.png`} />
                 </div>
               </div>
               <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
@@ -120,7 +120,7 @@ const CaseStudiesPage = () => {
                 <h2 className="text-2xl sm:text-3xl font-bold mb-3">{study.company}</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4"><strong>Desafío:</strong> {study.challenge}</p>
                 <p className="text-gray-600 dark:text-gray-400 mb-6"><strong>Solución EnergyPro:</strong> {study.solution}</p>
-                
+
                 <h3 className="text-lg font-semibold mb-2">Resultados Clave:</h3>
                 <ul className="space-y-2 mb-6">
                   {study.results.map((result, i) => (
@@ -137,7 +137,7 @@ const CaseStudiesPage = () => {
                   <p className="text-gray-700 dark:text-gray-300">"{study.testimonial}"</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">- {study.contactPerson}</p>
                 </div>
-                
+
                 <Button variant="outline" asChild>
                   <Link to={`/casos-de-exito/${study.id}`}>
                     Leer más detalles
@@ -149,7 +149,7 @@ const CaseStudiesPage = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: caseStudies.length * 0.2 + 0.3 }}

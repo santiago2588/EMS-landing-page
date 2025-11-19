@@ -36,7 +36,7 @@ const blogPosts = [
 
 const BlogPage = () => {
   return (
-    <PageLayout 
+    <PageLayout
       title={<>Nuestro <span className="gradient-text">Blog</span></>}
       subtitle="Mantente al día con las últimas noticias, tendencias y consejos sobre gestión energética en la industria manufacturera."
     >
@@ -45,7 +45,7 @@ const BlogPage = () => {
           <article key={post.id} className="flex flex-col md:flex-row gap-6 md:gap-8 items-center group">
             <div className="md:w-1/3 w-full">
               <Link to={`/blog/${post.id}`} className="block overflow-hidden rounded-lg shadow-md aspect-w-16 aspect-h-9">
-                 <img  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://images.unsplash.com/photo-1540030043244-25298571627f" alt={`Imagen del post ${post.title}`} />
+                <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src={`/images/${post.imageSlug}.png`} alt={`Imagen del post ${post.title}`} />
               </Link>
             </div>
             <div className="md:w-2/3 w-full">

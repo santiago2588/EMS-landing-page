@@ -47,7 +47,7 @@ const webinars = [
 
 const WebinarsPage = () => {
   return (
-    <PageLayout 
+    <PageLayout
       title={<>Webinars y <span className="gradient-text">Eventos</span></>}
       subtitle="Participa en nuestros webinars en vivo o accede a grabaciones pasadas para aprender de expertos y descubrir las mejores prácticas en gestión energética."
     >
@@ -55,7 +55,7 @@ const WebinarsPage = () => {
         {webinars.map(webinar => (
           <div key={webinar.id} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 p-6 bg-white dark:bg-gray-800/50 border dark:border-gray-700 rounded-lg shadow-sm transition-all hover:shadow-md">
             <div className="md:col-span-1">
-               <img  className="w-full h-48 object-cover rounded-md" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt={`Webinar: ${webinar.title}`} />
+              <img className="w-full h-48 object-cover rounded-md" src={`/images/${webinar.imageSlug}.png`} alt={`Webinar: ${webinar.title}`} />
             </div>
             <div className="md:col-span-2">
               <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-2 ${webinar.status === 'Próximo' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'}`}>
@@ -72,7 +72,7 @@ const WebinarsPage = () => {
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1"><strong>Ponente:</strong> {webinar.speaker}</p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{webinar.description}</p>
-              
+
               <div className="flex flex-wrap gap-3">
                 {webinar.status === 'Próximo' && (
                   <Button asChild>
@@ -102,10 +102,10 @@ const WebinarsPage = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">¿Te perdiste alguno? Explora nuestro archivo completo o suscríbete para no perderte los próximos.</p>
-          <Button variant="secondary">Ver todos los webinars pasados</Button>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">¿Te perdiste alguno? Explora nuestro archivo completo o suscríbete para no perderte los próximos.</p>
+        <Button variant="secondary">Ver todos los webinars pasados</Button>
       </div>
     </PageLayout>
   );

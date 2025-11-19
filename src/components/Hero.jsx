@@ -29,15 +29,15 @@ const Hero = () => {
               <Zap size={14} className="mr-1" />
               <span>Solución Integral para Manufactura</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
               Optimiza tu <span className="gradient-text">consumo energético</span> industrial
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
               Plataforma inteligente que monitorea, analiza y optimiza el consumo energético en tiempo real para reducir costos operativos y mejorar la sostenibilidad.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="group">
                 Solicitar Demo
@@ -47,7 +47,7 @@ const Hero = () => {
                 Ver Planes
               </Button>
             </div>
-            
+
             <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-6">
               <div className="flex items-center">
                 <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
@@ -63,7 +63,7 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -81,7 +81,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <img  alt="Dashboard de gestión energética" className="w-full h-auto rounded-md shadow-sm" src="https://images.unsplash.com/photo-1684748802598-0914b5a172e6" />
+                  <img alt="Dashboard de gestión energética" className="w-full h-auto rounded-md shadow-sm" src="/images/energy-dashboard-hero.png" />
                 </div>
               </div>
             </div>
