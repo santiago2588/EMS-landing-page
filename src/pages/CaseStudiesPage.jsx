@@ -13,7 +13,7 @@ const caseStudies = [
     solution: "Implementación de EnergyPro para monitoreo en tiempo real, análisis predictivo y optimización de ciclos de hornos. Instalación de sensores en 50 puntos clave.",
     results: [
       "Reducción del 22% en el consumo energético total en 8 meses.",
-      "Ahorro de €150,000 anuales en costos de energía.",
+      "Ahorro de $150,000 anuales en costos de energía.",
       "Disminución del 15% en emisiones de CO2.",
       "Mejora del 10% en la eficiencia de los hornos."
     ],
@@ -29,8 +29,8 @@ const caseStudies = [
     solution: "Plataforma EnergyPro para gestión de picos de demanda, optimización de horarios de producción y alertas de consumo anómalo en tiempo real.",
     results: [
       "Reducción del 18% en el consumo energético global.",
-      "Eliminación completa de penalizaciones por picos de demanda (€30,000 anuales).",
-      "Ahorro de €95,000 anuales en la factura eléctrica.",
+      "Eliminación completa de penalizaciones por picos de demanda ($30,000 anuales).",
+      "Ahorro de $95,000 anuales en la factura eléctrica.",
       "Mejora de la planificación de la producción gracias a la predictibilidad del consumo."
     ],
     imageSlug: "textile-factory-colorful-threads",
@@ -46,7 +46,7 @@ const caseStudies = [
     results: [
       "Identificación y corrección de 5 fugas energéticas principales, ahorrando un 8% del consumo total.",
       "Reducción del 12% en el consumo de los sistemas de refrigeración.",
-      "Ahorro total de €70,000 anuales.",
+      "Ahorro total de $70,000 anuales.",
       "Cumplimiento proactivo de normativas ISO 50001."
     ],
     imageSlug: "food-processing-plant-conveyor-belt",
@@ -113,7 +113,7 @@ const CaseStudiesPage = () => {
                 </div>
               </div>
               <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="flex items-center text-sm text-primary mb-2">
+                <div className="flex items-center text-sm text-brand-g7 mb-2">
                   <Building size={16} className="mr-2" />
                   <span>{study.industry}</span>
                 </div>
@@ -125,15 +125,15 @@ const CaseStudiesPage = () => {
                 <ul className="space-y-2 mb-6">
                   {study.results.map((result, i) => (
                     <li key={i} className="flex items-start">
-                      <div className="mr-2 mt-1 flex-shrink-0 h-5 w-5 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <TrendingUp size={12} className="text-blue-600" />
+                      <div className="mr-2 mt-1 flex-shrink-0 h-5 w-5 flex items-center justify-center rounded-full bg-brand-g7/10 dark:bg-brand-g7/30">
+                        <TrendingUp size={12} className="text-brand-g7" />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300">{result}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md mb-6 italic border-l-4 border-blue-500">
+                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md mb-6 italic border-l-4 border-brand-g7">
                   <p className="text-gray-700 dark:text-gray-300">"{study.testimonial}"</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">- {study.contactPerson}</p>
                 </div>

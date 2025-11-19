@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
 import { DollarSign, Zap, ArrowRight, Percent } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -42,10 +41,10 @@ const SavingsCalculatorPage = () => {
 
   const handleCalculate = (e) => {
     e.preventDefault();
-    if (monthlyBill <= 0) {
+    if (!Number.isFinite(monthlyBill) || monthlyBill <= 0) {
       toast({
         title: "Error de cálculo",
-        description: "Por favor, introduce un costo mensual válido.",
+        description: "Por favor, introduce un costo mensual válido (mayor que 0).",
         variant: "destructive",
       });
       return;
@@ -112,7 +111,10 @@ const SavingsCalculatorPage = () => {
                 type="number"
                 id="monthlyBill"
                 value={monthlyBill}
-                onChange={(e) => setMonthlyBill(parseFloat(e.target.value))}
+                onChange={(e) => {
+                  const v = parseFloat(e.target.value);
+                  setMonthlyBill(Number.isFinite(v) ? v : 0);
+                }}
                 placeholder="Ej: 5000"
                 className="text-lg"
                 min="0"
@@ -146,19 +148,20 @@ const SavingsCalculatorPage = () => {
                  <Percent size={20} className="mr-2 text-primary" />
                 Potencial de Ahorro Estimado (%)
               </Label>
-              <div className="flex items-center space-x-4">
-                <Slider
-                  id="potentialSaving"
-                  min={5}
-                  max={40}
-                  step={1}
-                  value={[potentialSaving]}
-                  onValueChange={(value) => setPotentialSaving(value[0])}
-                  className="flex-grow"
-                />
-                <span className="text-xl font-semibold w-16 text-right">{potentialSaving}%</span>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Calculado automáticamente según el sector</span>
+                  <span className="text-xl font-semibold">{potentialSaving}%</span>
+                </div>
+                {/* Simple progress bar */}
+                <div className="w-full h-3 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-primary"
+                    style={{ width: `${Math.min(Math.max(potentialSaving, 0), 100)}%` }}
+                  />
+                </div>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Ajusta el porcentaje de ahorro potencial según tu conocimiento (estimación basada en industria).</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Este porcentaje se basa en promedios del sector seleccionado.</p>
             </div>
 
             <Button type="submit" size="lg" className="w-full text-lg group">
@@ -178,15 +181,15 @@ const SavingsCalculatorPage = () => {
                 Resultados Estimados
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg text-center">
-                  <p className="text-sm text-blue-700 dark:text-blue-300 mb-1">Ahorro Mensual Estimado</p>
-                  <p className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
+                <div className="bg-brand-g7/10 dark:bg-brand-g7/30 p-6 rounded-lg text-center">
+                  <p className="text-sm text-brand-g7 mb-1">Ahorro Mensual Estimado</p>
+                  <p className="text-4xl font-extrabold text-brand-g7">
                     ${calculatedSavings.monthly.toLocaleString('en-US')}
                   </p>
                 </div>
-                <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg text-center">
-                  <p className="text-sm text-green-700 dark:text-green-300 mb-1">Ahorro Anual Estimado</p>
-                  <p className="text-4xl font-extrabold text-green-600 dark:text-green-400">
+                <div className="bg-brand-g1/10 dark:bg-brand-g1/20 p-6 rounded-lg text-center">
+                  <p className="text-sm text-brand-g1 mb-1">Ahorro Anual Estimado</p>
+                  <p className="text-4xl font-extrabold text-brand-g1">
                     ${calculatedSavings.annual.toLocaleString('en-US')}
                   </p>
                 </div>

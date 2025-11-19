@@ -5,6 +5,7 @@ import Stats from '@/components/Stats';
 import Testimonials from '@/components/Testimonials';
 import Benefits from '@/components/Benefits';
 import CTA from '@/components/CTA';
+import FAQs from '@/components/FAQs';
 import { motion } from 'framer-motion';
 
 const pageVariants = {
@@ -33,6 +34,7 @@ const HomePage = () => {
       <Stats />
       <Benefits />
       <Testimonials />
+      <FAQs />
       <CTA />
     </motion.div>
   );

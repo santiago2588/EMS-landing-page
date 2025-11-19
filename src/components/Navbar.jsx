@@ -64,11 +64,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">EP</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-9 h-9 rounded-full brand-gradient flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-sm">P</span>
               </div>
-              <span className="font-bold text-xl">EnergyPro</span>
+              <div className="flex flex-col leading-none">
+                <span className="font-brand font-bold text-xl">PUNGO</span>
+                <span className="font-slogan font-light text-[10px] uppercase tracking-wide text-gray-600 dark:text-gray-300">Solutions</span>
+              </div>
             </Link>
           </div>
 

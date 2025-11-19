@@ -16,12 +16,27 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        brand: ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        // Use Montserrat Light as the closest widely-available alternative to Gotham Light.
+        // Poppins Light as secondary. If licensed Gotham is provided later, place its files and keep the stack.
+        slogan: ["Montserrat", "Poppins", "Gotham Light", "Gotham", "ui-sans-serif", "system-ui", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brand: {
+          g1: "#8EC14B", // rgb(142,193,75)
+          g2: "#7CB818", // rgb(124,184,24)
+          g3: "#6DB15A", // rgb(109,177,90)
+          g4: "#529B6D", // rgb(82,155,109)
+          g5: "#348C7C", // rgb(52,140,124)
+          g6: "#1B7B8A", // rgb(27,123,138)
+          g7: "#007297", // rgb(0,114,151)
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
