@@ -1,10 +1,4 @@
-import React from 'react';
-import Hero from '@/components/Hero';
-import Features from '@/components/Features';
-import Stats from '@/components/Stats';
-import Testimonials from '@/components/Testimonials';
-import Benefits from '@/components/Benefits';
-import CTA from '@/components/CTA';
+import ContactForm from '@/components/ContactForm';
 import FAQs from '@/components/FAQs';
 import { motion } from 'framer-motion';
 
@@ -36,6 +30,7 @@ const HomePage = () => {
       <Testimonials />
       <FAQs />
       <CTA />
+      <ContactForm />
     </motion.div>
   );
 };
