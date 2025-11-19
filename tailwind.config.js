@@ -17,10 +17,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Gotham Light", "Montserrat", "Poppins", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
-        title: ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
-        brand: ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
-        slogan: ["Gotham Light", "Montserrat", "Poppins", "ui-sans-serif", "system-ui", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        title: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        brand: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
+        slogan: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
