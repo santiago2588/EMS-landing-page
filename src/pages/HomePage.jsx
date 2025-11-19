@@ -1,6 +1,12 @@
 import ContactForm from '@/components/ContactForm';
 import FAQs from '@/components/FAQs';
 import { motion } from 'framer-motion';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import Stats from '@/components/Stats';
+import Benefits from '@/components/Benefits';
+import Testimonials from '@/components/Testimonials';
+import CTA from '@/components/CTA';
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
